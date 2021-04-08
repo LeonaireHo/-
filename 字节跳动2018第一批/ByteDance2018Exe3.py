@@ -24,12 +24,12 @@ for _ in range(nbjob):
 def distibu(jobs):
     idx = 0
     for i in range(1,len(jobs)):
-        for j in [2,3,1,4]
-        if jobs[i][j]>jobs[idx][j]:
-            break
-        if jobs[i][j]<jobs[idx][j]:
-            idx = i
-            break
+        for j in [2,3,1,0]:
+            if jobs[i][j]>jobs[idx][j]:
+                break
+            if jobs[i][j]<jobs[idx][j]:
+                idx = i
+                break
     return idx
 
 copie = listjob.copy()
