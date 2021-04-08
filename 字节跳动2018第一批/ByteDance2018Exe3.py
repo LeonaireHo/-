@@ -24,24 +24,10 @@ for _ in range(nbjob):
 def distibu(jobs):
     idx = 0
     for i in range(1,len(jobs)):
-        if jobs[i][2]>jobs[idx][2]:
+        for j in [2,3,1,4]
+        if jobs[i][j]>jobs[idx][j]:
             break
-        if jobs[i][2]<jobs[idx][2]:
-            idx = i
-            break
-        if jobs[i][3]>jobs[idx][3]:
-            break
-        if jobs[i][3]<jobs[idx][3]:
-            idx = i
-            break
-        if jobs[i][1] > jobs[idx][1]:
-            break
-        if jobs[i][1] < jobs[idx][1]:
-            idx = i
-            break
-        if jobs[i][0]>jobs[idx][0]:
-            break
-        if jobs[i][0]<jobs[idx][0]:
+        if jobs[i][j]<jobs[idx][j]:
             idx = i
             break
     return idx
