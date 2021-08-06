@@ -4,7 +4,7 @@
 输入：height = [0,1,0,2,1,0,1,3,2,1,2,1]
 输出：6
 """
-
+#318/320
 def f(list):
     hmax = max(list)
     res = 0
@@ -19,5 +19,25 @@ def f(list):
             elif flag:
                 brush += 1
     return res
+def f1(height):
+    res = 0
+    hleft = []
+    hright = []
+    top = 0
+    for i in height:
+        if i <= top:
+            hleft.append(top - i)
+        else:
+            hleft.append(0)
+            top = i
+    top = 0
+    for i in height[::-1]:
+        if i <= top:
+            hright.append(top - i)
+        else:
+            hright.append(0)
+            top = i
+    hright.reverse()
+    return sum([min(hleft[i],hright[i]) for i in range(len(height))])
 
-print(f([0,1,0,2,1,0,1,3,2,1,2,1]))
+print(f1([0,1,0,2,1,0,1,3,2,1,2,1]))
